@@ -7,7 +7,13 @@ public class PowerUps : MonoBehaviour
     public PlayerController pc;                 // Vehicle 
     private float speedDelay = 5;               // Timer for speed power up
     private float speedTimer;                   // Keep track of the duration of the speed power up
-    private bool powerUpActive = false;         // Speed power up activation
+    private float sizeDelay = 5;                // Timer for size power up
+    private float sizeTimer;                    // Keep track of the duration of the size power up
+    private float laserDelay = 5;                // Timer for laser power up
+    private float laserTimer;                    // Keep track of the duration of the laser power up
+    private bool speedPowerUpActive = false;    // Speed power up activation
+    private bool sizePowerUpActive = false;     // Size power up activation
+    private bool laserPowerUpActive = false;    // Laser power up activation
 
     /// <summary>
     /// Start is called before the first frame update
@@ -22,14 +28,34 @@ public class PowerUps : MonoBehaviour
     /// </summary>    
     void Update()
     {
-        //time delay for power up
-        if (powerUpActive)
+        //time delay for speed power up
+        if (speedPowerUpActive)
         {
             speedTimer += Time.deltaTime;
             if (speedTimer > speedDelay)
             {
                 RevertSpeedPowerUp();
                 speedTimer = 0;
+            }
+        }
+
+        //time delay for size power up
+        if (sizePowerUpActive)
+        {
+            sizeTimer += Time.deltaTime;
+            if (sizeTimer > sizeDelay)
+            {
+                RevertSizePowerUp();
+            }
+        }
+
+        //time delay for laser power up
+        if (laserPowerUpActive)
+        {
+            laserTimer += Time.deltaTime;
+            if (laserTimer > laserDelay)
+            {
+                
             }
         }
     }
@@ -39,9 +65,23 @@ public class PowerUps : MonoBehaviour
     /// </summary>
     public void SpeedPowerUp()
     {
-        powerUpActive = true;
+        speedPowerUpActive = true;
         GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(255, 248, 0);
         pc.speed = 100;        
+    }
+
+    /// <summary>
+    /// Change the scale of the vehicle
+    /// </summary>
+    public void SizePowerUp()
+    {
+        sizePowerUpActive = true;
+        GameObject.Find("Player").transform.localScale = new Vector3(5, 5, 5);
+    }
+
+    public void LaserPowerUp()
+    {
+        laserPowerUpActive = true;
     }
 
     /// <summary>
@@ -49,8 +89,17 @@ public class PowerUps : MonoBehaviour
     /// </summary>
     private void RevertSpeedPowerUp()
     {
-        powerUpActive = false;
+        speedPowerUpActive = false;
         GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(0, 0, 255);
         pc.speed = 20;
+    }
+
+    /// <summary>
+    /// Revert the scale of the vehicle
+    /// </summary>
+    public void RevertSizePowerUp()
+    {
+        sizePowerUpActive = false;
+        GameObject.Find("Player").transform.localScale = new Vector3(1, 1, 1);
     }
 }

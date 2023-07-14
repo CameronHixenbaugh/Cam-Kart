@@ -27,6 +27,6 @@ public class PlayerController : MonoBehaviour
 
         //Moving the vehicle with dir arrows
         transform.Rotate(Vector3.up, Time.deltaTime * turnspeed * horizontalInput);
-        transform.Translate(Vector3.back * Time.deltaTime * GetSpeed() * forwardInput);
+        transform.Translate(Vector3.back * Time.deltaTime * speed * forwardInput);
     }
 }

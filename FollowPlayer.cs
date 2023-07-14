@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public GameObject player;                               //Vehicle Game Object
     private Vector3 cameraOffset = new Vector3(0, 2, 6);    //Camera Offset
     private float horizontalInput;                          //Left/right directional arrows
     

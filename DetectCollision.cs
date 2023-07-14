@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    public PowerUps pow;            // Vehicle powewr ups 
+    public PowerUps pow;            // Vehicle power ups
+    public SpawnPowerUps spu;
+    private string cubeType;        // Type of cube power up
 
     /// <summary>
     /// Start is called before the first frame update
@@ -29,7 +31,21 @@ public class DetectCollision : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Activate the speed power up
-        pow.SpeedPowerUp();
+        cubeType = gameObject.name;
+        switch (cubeType)
+        {
+            case "SpeedCube":
+                pow.SpeedPowerUp();
+                break;
+            case "SizeCube":
+                pow.SizePowerUp();
+                break;
+            case "LaserCube":
+                Debug.Log("laser");
+                break;
+        }
+
+        //spu.powerUpSpawned = true;
         Destroy(gameObject);
     }
 }
