@@ -29,25 +29,35 @@ Thus far only one track has been created to demonstrate how the game will work. 
 ## Player
 ![Vehicle](https://github.com/CameronHixenbaugh/Cam-Kart/assets/80737731/c4093114-29df-4a07-9db2-1073f9591036)
 
+**Video Link**
+https://youtu.be/KKSgAl6APx4
+
 The player controls their car by using the directional arrows and tries to follow the track. The camera will automatically follow the vehicle and stay behind it. 
 
 ## Power Ups
 
 Currently there are only three power ups, but they will be refined and more will be created over time. 
 
-###**Speed Power Up**
+### **Speed Power Up**
 ![SpeedPowerUp](https://github.com/CameronHixenbaugh/Cam-Kart/assets/80737731/01718ff6-6c59-4926-848c-14cb47aa9dad)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qylxjDZHXSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+**Video Link**
+https://youtu.be/qylxjDZHXSk
 
 The speed power up is indicated by the yellow boxes on the track. When the player hits the box with their car the vehicle will turn yellow and the speed will double. The power up will only last 5 seconds before the vehicle is returned to it's original color and speed.
 
 ### **Size Power Up**
 ![SizePowerUp](https://github.com/CameronHixenbaugh/Cam-Kart/assets/80737731/637d7464-0318-442d-b39b-4261f47f8632)
 
+**Video Link**
+https://youtu.be/pmHbFWxsaH8
+
 The size power up is indicated by the brown boxes on the track. When the player hits the box with their car the vehicle will grow 3 times it's original size for 5 seconds before returning to it's original size. 
 
 ### **Laser Power Up**
 ![LaserPowerUp](https://github.com/CameronHixenbaugh/Cam-Kart/assets/80737731/ef868f82-d4ec-4355-80c7-af28307c9989)
+
+**Video Link**
+https://youtu.be/KRMhqzMGCNI
 
 The laser power up is indicated by the purple boxes on the track. When the player hits the box with their car they will have the ability to shoot lasers by pressing the space bar. This power up lasts for 5 seconds.(When other racers are introduced to the game, if they are struck by a laser they will by forzen for 3 seconds before being allowed to move again) 
