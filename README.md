@@ -38,6 +38,8 @@ Currently there are only three power ups, but they will be refined and more will
 ###**Speed Power Up**
 ![SpeedPowerUp](https://github.com/CameronHixenbaugh/Cam-Kart/assets/80737731/01718ff6-6c59-4926-848c-14cb47aa9dad)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qylxjDZHXSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 The speed power up is indicated by the yellow boxes on the track. When the player hits the box with their car the vehicle will turn yellow and the speed will double. The power up will only last 5 seconds before the vehicle is returned to it's original color and speed.
 
 ### **Size Power Up**
