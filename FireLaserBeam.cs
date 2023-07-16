@@ -19,6 +19,7 @@ public class FireLaserBeam : MonoBehaviour
     /// </summary>
     void Update()
     {
+        // Move the laser beam forward when fired
         transform.Translate(Vector3.up * Time.deltaTime * laserSpeed);
     }
 }

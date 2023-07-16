@@ -5,12 +5,13 @@ using UnityEngine;
 public class PowerUps : MonoBehaviour
 {
     public PlayerController pc;                 // Vehicle 
+    public SpawnLaserBeam slb;                  // Spawn Laser beam script 
     private float speedDelay = 5;               // Timer for speed power up
     private float speedTimer;                   // Keep track of the duration of the speed power up
     private float sizeDelay = 5;                // Timer for size power up
     private float sizeTimer;                    // Keep track of the duration of the size power up
-    private float laserDelay = 5;                // Timer for laser power up
-    private float laserTimer;                    // Keep track of the duration of the laser power up
+    private float laserDelay = 5;               // Timer for laser power up
+    private float laserTimer;                   // Keep track of the duration of the laser power up
     private bool speedPowerUpActive = false;    // Speed power up activation
     private bool sizePowerUpActive = false;     // Size power up activation
     private bool laserPowerUpActive = false;    // Laser power up activation
@@ -55,7 +56,7 @@ public class PowerUps : MonoBehaviour
             laserTimer += Time.deltaTime;
             if (laserTimer > laserDelay)
             {
-                
+                RevertLaserPowerUp();
             }
         }
     }
@@ -67,7 +68,7 @@ public class PowerUps : MonoBehaviour
     {
         speedPowerUpActive = true;
         GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(255, 248, 0);
-        pc.speed = 100;        
+        pc.speed = 80;        
     }
 
     /// <summary>
@@ -76,12 +77,23 @@ public class PowerUps : MonoBehaviour
     public void SizePowerUp()
     {
         sizePowerUpActive = true;
-        GameObject.Find("Player").transform.localScale = new Vector3(5, 5, 5);
+        GameObject.Find("Player").transform.localScale = new Vector3(3, 3, 3);
     }
 
+    /// <summary>
+    ///  Allow vehicle to fire laser beams
+    /// </summary>
     public void LaserPowerUp()
     {
-        laserPowerUpActive = true;
+        slb.LasersEnabled = true;
+    }
+
+    /// <summary>
+    ///  Disable Laser beams
+    /// </summary>
+    public void RevertLaserPowerUp()
+    {
+        slb.LasersEnabled = false;
     }
 
     /// <summary>
@@ -91,7 +103,7 @@ public class PowerUps : MonoBehaviour
     {
         speedPowerUpActive = false;
         GameObject.Find("Player").GetComponent<Renderer>().material.color = new Color(0, 0, 255);
-        pc.speed = 20;
+        pc.speed = 40;
     }
 
     /// <summary>

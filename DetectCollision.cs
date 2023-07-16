@@ -41,7 +41,7 @@ public class DetectCollision : MonoBehaviour
                 pow.SizePowerUp();
                 break;
             case "LaserCube":
-                Debug.Log("laser");
+                pow.LaserPowerUp();
                 break;
         }
 

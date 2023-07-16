@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 20;            // Speed of vehicle
+    public float speed = 40;            // Speed of vehicle
     private float turnspeed = 70;       // Turn speed of vehicle
     private float horizontalInput;      // right/left directional arrows 
     private float forwardInput;         // Up/down directional arrows

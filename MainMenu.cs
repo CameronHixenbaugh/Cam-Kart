@@ -1,28 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Start is called before the first frame update
+    /// </summary>
     void Start()
     {
-        GameObject.Find("Start").GetComponent<Renderer>().material.color = Color.black;
+        
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update is called once per frame
+    /// </summary>
     void Update()
     {
         
     }
 
-    private void OnMouseEnter()
+    /// <summary>
+    /// Handle clicking the Start Button
+    /// </summary>
+    public void OnStartButton()
     {
-        GameObject.Find("Start").GetComponent<Renderer>().material.color = Color.red;
+        SceneManager.LoadScene(1);
     }
 
-    private void OnMouseExit()
+    /// <summary>
+    /// Handle clicking the Quit Button
+    /// </summary>
+    public void OnQuitButton()
     {
-        GameObject.Find("Start").GetComponent<Renderer>().material.color = Color.black;
+        Application.Quit();
     }
 }
