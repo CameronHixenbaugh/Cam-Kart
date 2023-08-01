@@ -1,13 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
+/// <summary>
+/// Class that spawns power ups after they have been destroyed
+/// </summary>
 public class SpawnPowerUps : MonoBehaviour
 {
-    public GameObject powerUpCube;
-    private float PUDelay = 5;               // Timer for speed power up
-    private float PUTimer;                   // Keep track of the duration of the speed power up
-    public bool powerUpSpawned = false;
+    public GameObject[] powerUpCube;        // Power up cubes
+    private float LPUDelay = 5;             // Timer for Laser power up
+    private float LPUTimer;                 // Keep track of the duration of the Laser power up
+    private float SpPUDelay = 5;            // Timer for Speed power up
+    private float SpPUTimer;                // Keep track of the duration of the Speed power up
+    private float SPUDelay = 5;             // Timer for Size power up
+    private float SPUTimer;                 // Keep track of the duration of the Size power up
+
+    /// <summary>
+    /// Keep track of whether the power ups are spawned
+    /// </summary>
+    public Dictionary<string, bool> powerUpSpawned = new Dictionary<string, bool>()
+        {
+            { "Laser", true},
+            { "Speed", true},
+            { "Size", true}
+        };
 
     /// <summary>
     /// Start is called before the first frame update
@@ -23,13 +40,33 @@ public class SpawnPowerUps : MonoBehaviour
     void Update()
     {
         //time delay for power ups
-        if (powerUpSpawned)
+        if (powerUpSpawned["Laser"] == false)
         {
-            PUTimer += Time.deltaTime;
-            if (PUTimer > PUDelay)
+            LPUTimer += Time.deltaTime;
+            if (LPUTimer > LPUDelay)
             {
-                SpawnPowerUp();
-                PUTimer = 0;
+                SpawnPowerUp("Laser");
+                LPUTimer = 0;
+            }
+        }
+
+        if (powerUpSpawned["Speed"] == false)
+        {
+            SpPUTimer += Time.deltaTime;
+            if (SpPUTimer > SpPUDelay)
+            {
+                SpawnPowerUp("Speed");
+                SpPUTimer = 0;
+            }
+        }
+
+        if (powerUpSpawned["Size"] == false)
+        {
+            SPUTimer += Time.deltaTime;
+            if (SPUTimer > SPUDelay)
+            {
+                SpawnPowerUp("Size");
+                SPUTimer = 0;
             }
         }
     }
@@ -37,10 +74,10 @@ public class SpawnPowerUps : MonoBehaviour
     /// <summary>
     /// Spawn Power up cubes
     /// </summary>
-    public void SpawnPowerUp()
+    public void SpawnPowerUp(string PUType)
     {
-        powerUpSpawned = false;
-        Vector3 spawnPos = new Vector3(3.15773511f, 1.57839346f, 9.81328392f);
-        Instantiate(powerUpCube, spawnPos, powerUpCube.transform.rotation);
+        powerUpSpawned[PUType] = true;
+        int index = powerUpSpawned.Keys.ToList().IndexOf(PUType);
+        powerUpCube[index].SetActive(true);
     }
 }

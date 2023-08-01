@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that handles all of the power ups
+/// </summary>
 public class PowerUps : MonoBehaviour
 {
     public PlayerController pc;                 // Vehicle 
@@ -29,6 +32,7 @@ public class PowerUps : MonoBehaviour
     /// </summary>    
     void Update()
     {
+        //To-Do create a method to handle the timers in a cleaner way 
         //time delay for speed power up
         if (speedPowerUpActive)
         {
@@ -47,6 +51,7 @@ public class PowerUps : MonoBehaviour
             if (sizeTimer > sizeDelay)
             {
                 RevertSizePowerUp();
+                sizeTimer = 0;
             }
         }
 
@@ -57,6 +62,7 @@ public class PowerUps : MonoBehaviour
             if (laserTimer > laserDelay)
             {
                 RevertLaserPowerUp();
+                laserTimer = 0;
             }
         }
     }
@@ -85,7 +91,8 @@ public class PowerUps : MonoBehaviour
     /// </summary>
     public void LaserPowerUp()
     {
-        slb.LasersEnabled = true;
+        laserPowerUpActive = true;
+        slb.lasersEnabled = true;
     }
 
     /// <summary>
@@ -93,7 +100,8 @@ public class PowerUps : MonoBehaviour
     /// </summary>
     public void RevertLaserPowerUp()
     {
-        slb.LasersEnabled = false;
+        laserPowerUpActive = false;
+        slb.lasersEnabled = false;
     }
 
     /// <summary>

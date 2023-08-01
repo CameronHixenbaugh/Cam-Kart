@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that handles the rotation of the wheels on the vehicle
+/// </summary>
 public class WheelRotation : MonoBehaviour
 {
     private float horizontalInput;        // Left/right directional arrows

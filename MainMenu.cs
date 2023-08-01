@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Class that controls the Main Menu
+/// </summary>
 public class MainMenu : MonoBehaviour
 {
     /// <summary>

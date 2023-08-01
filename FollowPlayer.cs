@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that makes the camera follow the user
+/// </summary>
 public class FollowPlayer : MonoBehaviour
 {
     private Vector3 cameraOffset = new Vector3(0, 2, 6);    //Camera Offset
