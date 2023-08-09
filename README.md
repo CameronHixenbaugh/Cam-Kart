@@ -4,14 +4,16 @@ This repository contains the scripts used to build a simple kart game in Unity G
 
 ## Current Status
 Currently the game is single player and there is only one vehicle which is controlled by the user by using the directional arrows. A simple track has been created to demonstrate how the game will work, but over development more difficult tracks will be created. There are three power ups in the game so far which may be adjusted in the future along with some newly created ones. Some more features that will be added are:
-- NPC Racers
 - Timer
-- Lap Counter
-- Racer placses
 - Mini Map
 - More power ups
 - Customizable cars
 - Race Rewards
+
+Here is a link for a video of the most recent updates for Cam Kart. In this most recent update one NPC racer has been added, a Lap Counter has been implemented, a Position Tracker has been implemented, and a results screen has been implemented.
+
+**Video Link**
+https://youtu.be/rZpL9euV42o
 
 ## Track
 Thus far only one track has been created to demonstrate how the game will work. All of the graphics are Unity's free assets that have been downloaded from Unity's Asset Store. 
