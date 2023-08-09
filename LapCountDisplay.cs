@@ -11,13 +11,6 @@ public class LapCountDisplay : MonoBehaviour
     public GameObject L1;               // GO for Lap 1
     public GameObject L2;               // GO for Lap 2
     public GameObject L3;               // GO for Lap 3
-    public GameObject ResultCam;        // GO for Results Cam
-    public GameObject RestartButton;    // GO for Results Cam
-    public GameObject PlayerCam;        // GO for Player Cam
-    public GameObject PlayerVehicle;    // GO for Player Vehicle
-    public GameObject NPCVehicle;       // GO for NPC Vehicle
-    private float finishTimer = 0;      // Timer to show the finished screen
-    private float finishDelay = 3;      // Delay to show the finished screen
 
     /// <summary>
     /// Start is called before the first frame update
@@ -32,22 +25,7 @@ public class LapCountDisplay : MonoBehaviour
     /// </summary>
     void Update()
     {
-        UpdateLapCountDisplay();
-
-        if (LapCount.RaceCompleted)
-        {
-            finishTimer += Time.deltaTime;
-            if (finishTimer > finishDelay)
-            {
-                Debug.Log("Race finished");
-                PlayerCam.SetActive(false);
-                ResultCam.SetActive(true);
-                RestartButton.SetActive(true);
-                PlayerVehicle.SetActive(false);
-                NPCVehicle.SetActive(false);
-                finishTimer = 0;
-            }
-        }
+        UpdateLapCountDisplay();        
     }
 
     /// <summary>
